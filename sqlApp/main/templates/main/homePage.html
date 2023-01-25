@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container-fluid " id="test">
+        <div class="row ">
+            <div class="col-lg-2 col-md-12">
+                <aside>
+
+                </aside>
+            </div>
+            <div class="col-lg-8 col-md-12">
+                <article>
+                        <div class="container text-center" style="margin-bottom: 80px;">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>Kalkulator obliczania liczby kryterialnej oferty sprzedazy mieszkania</h5>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-12">
+                                    <h5>Wybierz wagi parametrów mieszkania (im wyższa tym bardziej cecha ta jest istotna). Kalkulator obliczy dla każdej
+                                    oferty indywidualny wskażnik dopasowania i wyświetli 10 najlepszych ofert.</h5>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="container ">
+                        <form method="post" action="">
+                            {% csrf_token %}
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Metraż:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="metry">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Cena:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="cena">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Wiek:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="wiek">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Ruch:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="ruch">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Zaludnienie:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="zalud">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Bezpieczeństwo:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="bezp">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-3">
+                                    <h3>Komunikacja:</h3>
+                                </div>
+                                <div class="col-2">
+                                    <select class="form-select" aria-label="Default select example" name="kom">
+                                    <option value="0" selected>Wybierz wage</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="3">4</option>
+                                    <option value="3">5</option>
+                                    </select>
+                                </div>
+                                <div class="col-6"></div>
+                            </div>
+                            <div class="row">
+                                <div class="col-4"></div>
+                                <div class="col-5" style="margin-top:30px">
+                                    <button class="btn btn-primary" type="submit">Oblicz</button>
+                                </div>
+                            </div>
+                        </form>
+                        </div>
+                            <table class="table" style="margin-top: 40px">
+                              <thead>
+                                <tr>
+                                  <th scope="col">Numer ofery</th>
+                                  <th scope="col">Ulica</th>
+                                  <th scope="col">Cena</th>
+                                  <th scope="col">Metraz</th>
+                                  <th scope="col">Numer telefonu</th>
+                                  <th scope="col">Wskaznik dopasowania</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                 {% for of in ofers %}
+                                    <tr>
+                                        <td>{{ of.0 }}</td>
+                                        <td>{{ of.1 }}</td>
+                                        <td>{{ of.2 }} </td>
+                                        <td>{{ of.3 }}</td>
+                                        <td>{{ of.4 }}</td>
+                                        <td>{{ of.5 }}</td>
+                                    </tr>
+                                {% endfor %}
+                              </tbody>
+                            </table>
+                </article>
+            </div>
+            <div class="col-lg-2 col-md-12" >
+                <aside>
+
+                </aside>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
